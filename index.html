@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Sesión 2: ¡Construcción del Núcleo ODS! – Parte 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #ffa500; color: white; text-align: center; padding: 10px; } /* Orange Accent */
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #ffa500; /* Orange Accent */
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+            list-style: none;
+            display: block;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+         ul, ol {
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
+
+        summary {
+           display: block;
+           list-style: none;
+        }
+        summary::-webkit-details-marker {
+           display: none;
+        }
+
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content) {
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            }
+        }
+
+        window.onload = () => {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook - Sesión 2: ¡Construcción del Núcleo ODS! – Parte 1</h1>
+    </div>
+    <div class="container">
+        <h2 class="time-title">Tiempo efectivo de clase: 40 minutos</h2>
+
+        <!-- Resumen de Sesión -->
+        <div id="activity-0" class="activity">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">📝 Resumen de Sesión</div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table>
+                    <tr>
+                        <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
+                            <strong>🎯 Objetivo de la Sesión:</strong>
+                            <ul>
+                                <li>Empezar la construcción de la funcionalidad central (núcleo) del Prototipo Funcional Avanzado en Scratch.</li>
+                                <li>Implementar las primeras tareas técnicas del Mega-Backlog.</li>
+                                <li>Fomentar la interacción fluida entre los roles Pro (Prog -> Test -> Arq).</li>
+                            </ul>
+                            <strong>⏱️ Duración Estimada:</strong> 40 minutos.
+                        </td>
+                        <td style="width: 50%; padding: 10px;">
+                            <strong>🔑 Entregable Clave:</strong>
+                            <ul>
+                                <li>Primeras funcionalidades del núcleo programadas en Scratch.</li>
+                                <li>Progreso visible en la(s) tarea(s) movida(s) a "Haciendo".</li>
+                                <li>Tablero Kanban actualizado reflejando el avance.</li>
+                                <li>Evidencia de colaboración entre roles.</li>
+                            </ul>
+                             <strong>🛠️ Materiales/Preparación:</strong>
+                            <ul>
+                                <li>Dispositivos con acceso a Scratch y los proyectos iniciados (si aplica).</li>
+                                <li>Tablero Kanban de cada equipo con el Mega-Backlog y la(s) primera(s) tarea(s) en "Haciendo".</li>
+                                <li>Acceso al T-Bar y al diseño técnico/flujo definido en Sesión 1.</li>
+                                <li>Proyector o pantalla.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Desarrollo de la Sesión -->
+
+        <!-- Actividad 1: Stand-up Técnico -->
+        <div id="activity-1" class="activity">
+             <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🚦 Actividad 1: Stand-up Técnico ⏰ Tiempo: 5 minutos</div>
+             </div>
+            <div id="activity_1_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (1 min):</strong> Reunir equipos frente a Kanbans. Enfocar en las tareas a iniciar.
+                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 2: ¡Construcción del Núcleo - Parte 1!" y Objetivo).
+                            </td>
+                            <td>
+                                "¡Equipos Pro, buenos días! Hoy nos metemos de lleno en el código. Vamos a empezar a construir el corazón, el núcleo de nuestro Prototipo Avanzado. ¡Manos al Scratch!"
+                                <br><br>
+                                "Rápido check-in frente a sus Kanbans."
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (4 min):</strong> Guiar check-in Kanban rápido: ¿Qué tareas atacamos hoy?
+                                (<strong>Proyectar Diapositiva 2</strong>: Visual del Kanban con columna "Haciendo" resaltada. Pregunta: "¿Qué tareas atacamos hoy?").
+                            </td>
+                            <td>
+                                "Miren su columna 'Haciendo (⚙️)'. ¿Qué tarea(s) tenemos ahí listas para empezar?"
+                                <br><br>
+                                "Arquitectos/as o Programadores/as, confirmen brevemente cuál es la misión inmediata para su equipo hoy."
+                                <br><br>
+                                <em>(Facilitar que cada equipo verbalice la(s) tarea(s) en 'Haciendo'. Asegurar claridad sobre el objetivo inicial).</em>
+                                <br><br>
+                                "¡Perfecto! Todos saben por dónde empezar. ¡A darle vida a ese núcleo!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 2: ¡Código en Marcha! Trabajo Técnico -->
+        <div id="activity-2" class="activity">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                 <div class="title">⌨️ Actividad 2: ¡Código en Marcha! Trabajo Técnico ⏰ Tiempo: 30 minutos</div>
+             </div>
+            <div id="activity_2_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (30 min - Bloque Principal):</strong> Equipos programan y prueban las primeras tareas del núcleo. Facilitador circula y apoya. Fomentar interacción de roles: Prog -> Test -> Arq.
+                                (<strong>Proyectar Diapositiva 3</strong>: Diagrama dinámico de roles interactuando en ciclo: Programador codifica -> Tester prueba y da feedback -> Arquitecto revisa/desbloquea -> Programador ajusta...).
+                            </td>
+                            <td>
+                                "¡Adelante, equipos! Tienen 30 minutos intensos para trabajar en esas tareas iniciales del núcleo."
+                                <br><br>
+                                "<strong>Programadores/as:</strong> ¡Foco total en implementar la funcionalidad descrita en la(s) tarea(s) de 'Haciendo'!"
+                                <br><br>
+                                "<strong>Testers:</strong> ¡No esperen al final! Tan pronto como el programador/a tenga algo funcional, ¡pruébenlo! Busquen errores, verifiquen que cumple la tarea y den feedback claro y rápido."
+                                <br><br>
+                                "<strong>Arquitectos/as:</strong> ¡Supervisen el progreso! Asegúrense de que vamos en la dirección correcta según el diseño. Ayuden a desbloquear problemas y gestionen el Kanban moviendo tareas cuando sea necesario (a 'Listo para Probar' o '¡Listo!')."
+                                <br><br>
+                                "¡Recuerden el ciclo Pro: Programar - Probar - Revisar/Ajustar! ¡Colaboren estrechamente!"
+                                <br><br>
+                                <em>(Circular activamente. Observar la colaboración. Intervenir si un rol se bloquea o si la comunicación no fluye. Ofrecer ayuda técnica específica cuando sea necesario. Celebrar pequeños avances y soluciones encontradas).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (Integrado en los 30 min):</strong> Guiar el movimiento de tareas en Kanban (Haciendo -> Listo para Probar -> ¡Listo! / o de vuelta a Haciendo si hay bugs).
+                                (<strong>Proyectar Diapositiva 4</strong>: Recordatorio visual del Flujo Kanban Completo: Haciendo ⚙️ -> Listo para Probar 🔬 -> ¡Listo! ✅, con la opción de 🔬 -> ⚙️ si falla).
+                            </td>
+                            <td>
+                                <em>(Mientras circula, recordar el flujo Kanban):</em>
+                                <br>
+                                "¡No olviden mover las tareas en el Kanban!"
+                                <br><br>
+                                "Cuando el Programador/a termine y el Tester dé un primer OK, ¡Arquitecto/a mueve a 'Listo para Probar (🔬)'!"
+                                <br><br>
+                                "Si el Tester hace la prueba final y ¡todo perfecto!, ¡celebramos y movemos a '¡Listo! (✅)'!"
+                                <br><br>
+                                "Si el Tester encuentra un bug en 'Listo para Probar', se reporta y la tarea vuelve a 'Haciendo (⚙️)' para corregirse."
+                                <br><br>
+                                "¡Mantengan ese tablero vivo, es el reflejo de su avance!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 3: Cierre Rápido -->
+        <div id="activity-3" class="activity">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">⏱️ Actividad 3: Cierre Rápido ⏰ Tiempo: 5 minutos</div>
+            </div>
+            <div id="activity_3_content" class="content">
+                 <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (3 min):</strong> Pedir actualización final del Kanban. Breve puesta en común del progreso general.
+                            </td>
+                            <td>
+                                "¡Tiempo, Equipos Pro! Pausa en el código."
+                                <br><br>
+                                "Rápido, asegúrense de que su Kanban refleja dónde quedaron exactamente. ¿Qué tareas avanzaron? ¿Alguna llegó a '¡Listo!'?"
+                                <br><br>
+                                <em>(Dar 1-2 minutos para actualizar).</em>
+                                <br><br>
+                                "¡Bien! ¿Algún equipo quiere compartir brevemente un avance clave o un desafío interesante que encontraron hoy?"
+                                <br><br>
+                                <em>(Gestionar 1-2 comparticiones rápidas si el tiempo lo permite).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (2 min):</strong> Cerrar sesión, recordar guardar y anticipar la próxima sesión (Calidad del Núcleo).
+                                (<strong>Proyectar Diapositiva 5</strong>: Mensaje de Cierre "¡Núcleo en Construcción! Guardar y Siguiente Parada: ¡Calidad del Núcleo!").
+                            </td>
+                            <td>
+                                "¡Excelente trabajo iniciando la construcción del núcleo hoy!"
+                                <br><br>
+                                "¡FUNDAMENTAL! Guarden muy bien su proyecto Scratch antes de cerrar todo."
+                                <br><br>
+                                "En la próxima sesión, nos enfocaremos en la calidad de lo que hemos construido hasta ahora. ¡Más pruebas y depuración para asegurar que nuestro núcleo es sólido!"
+                                <br><br>
+                                "¡Nos vemos en la Sesión 3!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div> <!-- Fin del container -->
+</body>
+</html>
