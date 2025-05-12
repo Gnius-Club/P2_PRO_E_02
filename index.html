@@ -14,12 +14,21 @@
             color: white;
             padding: 10px;
             cursor: pointer;
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Adjusted for spacing */
             font-weight: bold;
             list-style: none;
             display: block;
+            border-radius: 5px; /* Rounded corners for banner */
         }
-        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        .content { 
+            display: none; 
+            padding: 15px; 
+            border: 1px solid #ddd; 
+            margin-bottom: 10px; 
+            border-radius: 5px; /* Rounded corners for content */
+            margin-top: -10px; /* Visual connection with banner */
+            padding-top: 20px; /* Avoid text clash */
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -43,13 +52,16 @@
         }
         .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
 
-        summary {
-           display: block;
-           list-style: none;
+        /* Making facilitator instructions clearer */
+        td em, td i { /* Style for italicized facilitator notes */
+            color: #555;
+            font-style: italic;
+            display: block; /* Put notes on new lines */
+            margin-top: 5px;
         }
-        summary::-webkit-details-marker {
-           display: none;
-        }
+        /* Ensure step <strong> tags render bold */
+        td strong { font-weight: bold; } /* General strong for keywords */
+        td > strong { display: block; margin-bottom: 5px; } /* For step headers */
 
     </style>
     <script>
@@ -69,6 +81,11 @@
             contents.forEach(content => {
                 content.style.display = 'none';
             });
+            // Open "Resumen de Sesión" by default
+            const resumenContent = document.getElementById('activity_0_content');
+            if (resumenContent) {
+                resumenContent.style.display = 'block';
+            }
         };
     </script>
 </head>
@@ -84,7 +101,7 @@
             <div class="banner" onclick="toggleContent('activity_0_content')">
                 <div class="title">📝 Resumen de Sesión</div>
             </div>
-            <div id="activity_0_content" class="content">
+            <div id="activity_0_content" class="content" style="display: block;">
                 <table>
                     <tr>
                         <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
@@ -135,8 +152,12 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (1 min):</strong> Reunir equipos frente a Kanbans. Enfocar en las tareas a iniciar.
-                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 2: ¡Construcción del Núcleo - Parte 1!" y Objetivo).
+                                <strong>Paso 1 (1 min):</strong>
+                                <ul>
+                                    <li>Reunir equipos frente a Kanbans.</li>
+                                    <li>Enfocar en las tareas a iniciar.</li>
+                                    <li><strong>Proyectar Diapositiva 1</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Equipos Pro, buenos días! Hoy nos metemos de lleno en el código. Vamos a empezar a construir el corazón, el núcleo de nuestro Prototipo Avanzado. ¡Manos al Scratch!"
@@ -146,8 +167,11 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (4 min):</strong> Guiar check-in Kanban rápido: ¿Qué tareas atacamos hoy?
-                                (<strong>Proyectar Diapositiva 2</strong>: Visual del Kanban con columna "Haciendo" resaltada. Pregunta: "¿Qué tareas atacamos hoy?").
+                                <strong>Paso 2 (4 min):</strong>
+                                <ul>
+                                    <li>Guiar check-in Kanban rápido: ¿Qué tareas atacamos hoy?</li>
+                                    <li><strong>Proyectar Diapositiva 2</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "Miren su columna 'Haciendo (⚙️)'. ¿Qué tarea(s) tenemos ahí listas para empezar?"
@@ -180,8 +204,13 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (30 min - Bloque Principal):</strong> Equipos programan y prueban las primeras tareas del núcleo. Facilitador circula y apoya. Fomentar interacción de roles: Prog -> Test -> Arq.
-                                (<strong>Proyectar Diapositiva 3</strong>: Diagrama dinámico de roles interactuando en ciclo: Programador codifica -> Tester prueba y da feedback -> Arquitecto revisa/desbloquea -> Programador ajusta...).
+                                <strong>Paso 1 (30 min - Bloque Principal):</strong>
+                                <ul>
+                                    <li>Equipos programan y prueban las primeras tareas del núcleo.</li>
+                                    <li>Facilitador circula y apoya.</li>
+                                    <li>Fomentar interacción de roles: Prog -> Test -> Arq.</li>
+                                    <li><strong>Proyectar Diapositiva 3</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Adelante, equipos! Tienen 30 minutos intensos para trabajar en esas tareas iniciales del núcleo."
@@ -199,8 +228,11 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (Integrado en los 30 min):</strong> Guiar el movimiento de tareas en Kanban (Haciendo -> Listo para Probar -> ¡Listo! / o de vuelta a Haciendo si hay bugs).
-                                (<strong>Proyectar Diapositiva 4</strong>: Recordatorio visual del Flujo Kanban Completo: Haciendo ⚙️ -> Listo para Probar 🔬 -> ¡Listo! ✅, con la opción de 🔬 -> ⚙️ si falla).
+                                <strong>Paso 2 (Integrado en los 30 min):</strong>
+                                <ul>
+                                    <li>Guiar el movimiento de tareas en Kanban (Haciendo -> Listo para Probar -> ¡Listo! / o de vuelta a Haciendo si hay bugs).</li>
+                                    <li><strong>Proyectar Diapositiva 4</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 <em>(Mientras circula, recordar el flujo Kanban):</em>
@@ -237,7 +269,11 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (3 min):</strong> Pedir actualización final del Kanban. Breve puesta en común del progreso general.
+                                <strong>Paso 1 (3 min):</strong>
+                                <ul>
+                                    <li>Pedir actualización final del Kanban.</li>
+                                    <li>Breve puesta en común del progreso general.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Tiempo, Equipos Pro! Pausa en el código."
@@ -253,8 +289,11 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (2 min):</strong> Cerrar sesión, recordar guardar y anticipar la próxima sesión (Calidad del Núcleo).
-                                (<strong>Proyectar Diapositiva 5</strong>: Mensaje de Cierre "¡Núcleo en Construcción! Guardar y Siguiente Parada: ¡Calidad del Núcleo!").
+                                <strong>Paso 2 (2 min):</strong>
+                                <ul>
+                                    <li>Cerrar sesión, recordar guardar y anticipar la próxima sesión (Calidad del Núcleo).</li>
+                                    <li><strong>Proyectar Diapositiva 5</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Excelente trabajo iniciando la construcción del núcleo hoy!"
